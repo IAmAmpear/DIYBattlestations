@@ -1,0 +1,981 @@
+/*General Formatting*/
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::placeholder {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+input[type="text"] {
+  font-size: 1.1rem;
+}
+
+input[type="email"] {
+  font-size: 1.1rem;
+}
+
+/* Main Page */
+/*Navbar*/
+
+nav {
+  background-color: #44005d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 6vh;
+}
+
+.nav-logo a {
+  color: #fff;
+  letter-spacing: 4px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  list-style-type: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.burger {
+  display: none;
+}
+
+.burger span {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 65%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden !important;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+  }
+  .nav-links {
+    position: fixed;
+    right: 0;
+    height: 94vh;
+    top: 6vh;
+    background-color: #44005d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    transform: translateX(100%);
+    transition: transform 0.75s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*Build a PC*/
+
+#build-a-pc {
+  background-image: url(images/pc-build.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  object-fit: cover;
+}
+
+.container-middle {
+  /*Used in almost all pages*/
+  text-align: center;
+}
+
+.pc-build-title {
+  padding-top: 11%;
+  color: white;
+  font-size: 2.8rem;
+}
+
+.pc-build-subtitle {
+  color: white;
+  padding-top: 3%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+/*pc-build-btn*/
+.intro-btn {
+  margin-top: 5%;
+  padding: 1% 2%;
+  margin-bottom: 15%;
+  background-image: linear-gradient(
+    to right,
+    #aa076b 0%,
+    #61045f 51%,
+    #aa076b 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+@keyframes btn-animation {
+  from {
+    font-size: 1.3rem;
+  }
+  to {
+    font-size: 1.8rem;
+  }
+}
+.intro-btn:hover {
+  cursor: pointer;
+  animation-name: btn-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.intro-btn-link {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+  #build-a-pc {
+    background-size: 100% 800px;
+  }
+  .pc-build-title {
+    padding-top: 20%;
+  }
+}
+
+/*About Us Section*/
+
+#about-us,
+#build-guide,
+#why-build {
+  background-color: #0d0d0d;
+}
+
+#about-us-title,
+#why-build-title,
+#build-guide-title,
+#parts-comp-title,
+#latest-builds-title {
+  color: #fff;
+  text-align: center;
+  font-size: 3.5rem;
+  padding-top: 5%;
+}
+
+.about-us-card {
+  padding: 8% 6.55% 10%;
+  text-align: center;
+  width: 20%;
+  display: inline-block;
+}
+
+.about-us-card h4 {
+  color: #fff;
+  font-size: 1.7rem;
+  padding: 15px 0;
+}
+
+.about-us-card p {
+  color: lightgrey;
+  padding: 10px 0;
+  line-height: 1.5;
+}
+
+.icons {
+  color: #aa076b;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 1130px) {
+  .about-us-card {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+  }
+}
+
+/* Latest Builds */
+
+#latest-builds {
+  background-color: #44005d;
+}
+
+.latest-build-card {
+  margin: 7% 7.9%;
+  background-color: white;
+  width: 30%;
+  border-radius: 30px;
+  text-align: center;
+  padding: 3% 2%;
+  display: inline-block;
+}
+
+.latest-build-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.latest-build-card:hover {
+  animation-name: card-animation;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes card-animation {
+  from {
+    background-color: #fff;
+    color: #000;
+  }
+  to {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.latest-build-card h2 {
+  padding-bottom: 7%;
+  color: #aa076b;
+}
+
+.latest-build-img {
+  height: 200px;
+  padding-bottom: 5%;
+}
+
+.latest-build-bold {
+  font-weight: bold;
+}
+
+.latest-build-card ul {
+  list-style-type: none;
+  padding-bottom: 4%;
+}
+
+.latest-build-card ul li {
+  line-height: 1.8;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.latest-build-price {
+  font-size: 3.5rem;
+  text-decoration: underline;
+  padding-top: 1.5%;
+}
+
+@media screen and (max-width: 1024px) {
+  #latest-builds {
+    height: 1800px;
+  }
+  .latest-build-card {
+    display: block;
+    width: 70%;
+    margin: 7% auto;
+  }
+}
+
+/* Setup Optimization */
+
+#setup {
+  background-image: url(images/pc-build-btm.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+#setup-text {
+  padding: 10% 5%;
+  width: 30%;
+  height: 400px;
+  margin-left: 60%;
+  background-color: #0d0d0d;
+  text-align: center;
+}
+
+#setup-text h2 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+#setup-text p {
+  color: #fff;
+  font-size: 1.2rem;
+  padding-top: 10%;
+  line-height: 1.5;
+}
+
+#setup-btn {
+  margin-top: 20%;
+  padding: 4% 8%;
+  margin-bottom: 10%;
+  background-image: linear-gradient(
+    to right,
+    #aa076b 0%,
+    #61045f 51%,
+    #aa076b 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#setup-btn:hover {
+  cursor: pointer;
+  animation-name: btn-animation2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes btn-animation2 {
+  from {
+    font-size: 1.3rem;
+  }
+  to {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #setup-text {
+    width: 60%;
+    position: relative;
+    right: 30%;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  #setup-text {
+    z-index: 10;
+    height: 650px;
+    width: 100%;
+    position: relative;
+    right: 65%;
+  }
+  #setup-text p {
+    margin: 0 20%;
+  }
+}
+
+/* Contact Us */
+
+#contact-us {
+  background-color: #aa076b;
+}
+
+#contact-us-text {
+  text-align: center;
+  padding: 4% 8%;
+}
+
+#contact-us h1 {
+  font-size: 4rem;
+}
+
+.contact-us-btn {
+  font-size: 1.5rem;
+  padding: 1% 3%;
+  margin: 7% 3%;
+  border: none;
+  border-radius: 10px;
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+.contact-us-btn:hover {
+  cursor: pointer;
+}
+
+.contact-us-span {
+  font-family: "Rubik", sans-serif;
+  font-weight: 800;
+}
+
+#contact-us h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  padding-bottom: 4%;
+}
+
+.contact-us-input {
+  display: block;
+  border: 2px solid black;
+  border-radius: 10px;
+  height: 50px;
+  margin: 1% auto;
+  width: 25%;
+}
+
+.contact-us-textarea {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 25%;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-us-input {
+    width: 50%;
+  }
+  .contact-us-textarea {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-us-btn {
+    display: block;
+    margin: 7% auto;
+  }
+  #contact-us h1 {
+    font-size: 3rem;
+  }
+  .contact-us-input {
+    width: 90%;
+  }
+  .contact-us-textarea {
+    width: 90%;
+  }
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 3%;
+  background-color: #0d0d0d;
+  color: #fff;
+  font-size: 1.4rem;
+}
+
+/* End of the Main Page */
+
+/* Why Build Page */
+
+#why-build-pic {
+  background-image: url(images/why-build.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.why-build-subtitle {
+  color: #ffd10c;
+  text-align: left;
+  font-size: 2.1rem;
+}
+
+.p-why-build {
+  color: white;
+  font-size: 1.2rem;
+  padding: 3% 0% 8% 0%;
+  letter-spacing: 1.7px;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+#why-build {
+  padding-bottom: 7%;
+}
+
+@media screen and (max-width: 1024px) {
+  #why-build-pic {
+    background-size: 100% 800px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #why-build-pic {
+    background-size: 100% 650px;
+  }
+  .why-build-text {
+    text-align: center;
+    font-size: 1.7rem;
+  }
+  .p-why-build {
+    text-align: center;
+    font-size: 1rem;
+  }
+  .why-build-subtitle {
+    text-align: justify;
+    font-size: 1.7rem;
+  }
+}
+
+#center-box {
+  margin: 5% auto auto auto;
+  width: 60%;
+  background-color: rgb(61, 4, 61);
+  border: 1px solid white;
+  padding: 2% 4% 2% 4%;
+  border-radius: 30px;
+}
+
+#div-why-build-text {
+  padding-right: 6%;
+}
+
+.div-ul {
+  list-style-type: none;
+}
+
+/* End of Why Build Page */
+
+/* Build Guide Page */
+
+.build-guide-parts {
+  background-color: #0d0d0d;
+  padding-bottom: 5%;
+}
+
+#build-guide-pic {
+  background-image: url(images/build-guide.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.build-guide-text-title {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  padding-top: 50px;
+}
+
+.build-guide-text {
+  text-justify: inter-word;
+  text-align: justify;
+  font-size: 1.3rem;
+  color: white;
+  padding: 20px 60px 0px 60px;
+  word-wrap: break-word;
+}
+
+.build-guide-btn {
+  margin-top: 5%;
+  padding: 1% 2%;
+  margin-bottom: 13.5%;
+  background-image: linear-gradient(
+    to right,
+    #aa076b 0%,
+    #61045f 51%,
+    #aa076b 100%
+  );
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+}
+
+.build-guide-btn:hover {
+  cursor: pointer;
+  animation-name: btn-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 1138px) {
+  #build-guide-pic {
+    background-size: 100% 700px;
+  }
+  .pc-build-title {
+    margin: 0 10%;
+  }
+  .pc-build-subtitle {
+    margin: 0 10%;
+  }
+}
+
+/* Build Guide - Parts Section */
+
+#pc-build-title {
+  text-align: center;
+  color: #fff;
+  padding-top: 5%;
+  font-size: 3rem;
+}
+
+.build-guide-serial-pic-left {
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px 0px 0px 30px; /*cantos curvos - lado esquerdo*/
+}
+
+.build-guide-serial-pic-right {
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+  float: right;
+  border-radius: 0px 30px 30px 0px; /*cantos curvos - lado direito*/
+}
+
+.dynamic-item-right {
+  background-color: #3b0050;
+  flex-grow: 1;
+  max-height: 600px;
+  max-width: 800px;
+  border-radius: 0px 30px 30px 0px; /*cantos curvos - lado direito*/
+}
+
+.dynamic-item-left {
+  background-color: #3b0050;
+  flex-grow: 1;
+  max-height: 600px;
+  max-width: 800px;
+  border-radius: 30px 0px 0px 30px; /*cantos curvos - lado esquerdo*/
+}
+
+.dynamic-item-right-pic {
+  background-color: #3b0050;
+  flex-grow: 1;
+  max-height: 600px;
+  max-width: 800px;
+  border-radius: 0px 30px 30px 0px; /*cantos curvos - lado direito*/
+}
+
+.dynamic-item-left-pic {
+  background-color: #3b0050;
+  flex-grow: 1;
+  max-height: 600px;
+  max-width: 800px;
+  border-radius: 30px 0px 0px 30px; /*cantos curvos - lado esquerdo*/
+}
+
+#container-build-guide-top {
+  display: flex;
+  margin: 6% 7% 0% 7%;
+  padding-bottom: 50px;
+}
+.container-build-guide-middle {
+  display: flex;
+  margin: 0% 7% 0% 7%;
+  padding-bottom: 50px;
+}
+
+#container-build-guide-bottom {
+  display: flex;
+  margin: 0% 7% 0% 7%;
+}
+
+@media screen and (max-width: 768px) {
+  #build-guide-pic {
+    background-size: 100% 825px;
+  }
+  .build-guide-text-title {
+    font-size: 1rem;
+    padding-top: 5%;
+  }
+  .build-guide-text {
+    font-size: 0.8rem;
+    padding: 20px 15px 0px 15px;
+    text-align: center;
+  }
+  .dynamic-item-left-pic {
+    max-width: 30%;
+  }
+  .dynamic-item-right-pic {
+    max-width: 30%;
+  }
+
+  .p-build-guide-tips {
+    text-align: center;
+  }
+  .build-guide-tips-subtitle {
+    font-size: 1.9rem;
+  }
+}
+
+/* Build Guide - Tips Section */
+#build-guide-tips,
+#parts-comp-tips {
+  background-color: rgb(70, 0, 38);
+  padding-bottom: 9%;
+}
+
+#center-box-tips,
+#center-box-parts-comp {
+  margin: 5% auto auto auto;
+  width: 60%;
+  background-color: rgb(0, 141, 134);
+  padding: 2% 4% 2% 4%;
+  /*border: 2px solid #0d0d0d;*/
+  border-radius: 30px;
+}
+
+.p-build-guide-tips {
+  color: white;
+  font-size: 1.2rem;
+  padding: 3% 0% 3% 0%;
+  letter-spacing: 1.7px;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+.hr-build-guide-tips {
+  width: 80%;
+  margin: auto;
+  color: rgb(70, 0, 38);
+  border-width: 4px;
+  border-radius: 4px;
+  border-style: solid;
+}
+
+.build-guide-tips-subtitle {
+  color: rgb(102, 59, 83);
+  text-align: left;
+  font-size: 2.1rem;
+}
+
+.icons-build-guide-tips {
+  color: rgb(70, 0, 38);
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+  #build-guide-pic {
+    background-size: 100% 810px;
+  }
+  .p-build-guide-tips {
+    text-align: center;
+  }
+  .build-guide-tips-subtitle {
+    font-size: 1.9rem;
+  }
+}
+/* End of Build Guide - Tips Section */
+
+/* Build Guide - Parts Compatibility*/
+
+#build-guide-comp {
+  background-image: url(images/build-comp.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#build-guide-comp-text {
+  padding: 10% 5%;
+  width: 30%;
+  height: 400px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+}
+
+#build-guide-comp-text h2 {
+  color: #fff;
+  font-size: 2.6rem;
+}
+
+#build-guide-comp-text p {
+  color: #fff;
+  font-size: 1.2rem;
+  padding-top: 10%;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1180px) {
+  #build-guide-comp,
+  #parts-comp {
+    background-size: 100% 700px;
+  }
+  #build-guide-comp-text {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #build-guide-comp-text h2 {
+    font-size: 1.8rem;
+  }
+  #build-guide-comp-text p {
+    font-size: 1rem;
+  }
+}
+
+/* End of Build Guide - Parts Compatibility */
+/* End of Build Guide Page */
+/* Build Guide Parts Comp */
+
+#parts-comp {
+  background-image: url(images/parts-comp-pic.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-bottom: 20.5%;
+}
+
+#parts-comp-ul {
+  color: white;
+  font-size: 1.2rem;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  #parts-comp {
+    background-size: 100% 700px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #parts-comp {
+    background-size: 100% 600px;
+  }
+}
+
+/* End of Build Guide Parts Comp */
+
+/* Setup Tips Page */
+
+#setup-tips {
+  background-image: url(images/pc-build-btm-flip.jpg);
+  background-size: 100% 850px;
+  background-repeat: no-repeat;
+}
+
+#optimize-setup {
+  background-color: #0d0d0d;
+  padding-bottom: 4%;
+}
+
+#optimize-setup h2 {
+  color: #fff;
+  font-size: 3rem;
+  padding: 5% 0;
+  text-align: center;
+}
+
+.optimize-setup-card {
+  text-align: center;
+  padding: 3% 4%;
+  margin: 2% auto;
+  background-color: #fff;
+  color: #000;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.optimize-setup-card:hover {
+  background-color: #000;
+  color: #fff;
+  transition: 1s;
+}
+
+.optimize-setup-card h3 {
+  font-size: 2rem;
+  padding-bottom: 2%;
+  text-decoration: underline;
+  margin-left: 35%;
+}
+
+.setup-tips-img {
+  float: left;
+  width: 30%;
+  height: 300px;
+  padding-right: 4%;
+  object-fit: cover;
+}
+
+.optimize-setup-card p {
+  padding: 1% 0 2%;
+  line-height: 1.2;
+  font-size: 1.2rem;
+}
+
+.setup-tips li {
+  font-size: 1.1rem;
+  padding: 1% 0;
+}
+
+#setup-comparisions {
+  background-color: #aa076b;
+  padding-bottom: 5%;
+}
+
+#setup-comparisions h2 {
+  text-align: center;
+  font-size: 3rem;
+  padding-top: 5%;
+  color: #fff;
+}
+
+.setup-comparisions-card {
+  background-color: #fff;
+  padding: 0% 5% 3% 5%;
+  margin: 5% auto;
+  width: 70%;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.setup-comparisions-card h3 {
+  padding: 4% 0;
+  font-size: 2rem;
+}
+
+.setup-comparisions-img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .setup-tips-img {
+    float: none;
+    object-fit: contain;
+    width: 50%;
+  }
+  .optimize-setup-card h3 {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .optimize-setup-card p {
+    margin: 0 7% 3% 7%;
+  }
+  .setup-tips li {
+    margin: 10% 7%;
+  }
+}
